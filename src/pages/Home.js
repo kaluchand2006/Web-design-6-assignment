@@ -27,17 +27,17 @@ const Home = () => {
   const fetchWeather = async (city) => {
     try {
       setLoading(true);
-      const response = await axios.get(
-        `https://jsonplaceholder.typicode.com/posts/1` // Replace with real API later
-      );
-      
+
+      // Simulated API call — real one can be added later
+      // const response = await axios.get('https://your-api-url.com');
+
       const mockWeather = {
         city: city,
         temperature: Math.floor(Math.random() * 30) + 10,
         condition: ['Sunny', 'Cloudy', 'Rainy', 'Stormy'][Math.floor(Math.random() * 4)],
         humidity: Math.floor(Math.random() * 50) + 30,
       };
-      
+
       setWeather(mockWeather);
       setLoading(false);
     } catch (err) {
@@ -60,12 +60,12 @@ const Home = () => {
       setLocation(savedLocation);
     }
     fetchWeather(savedLocation || 'London');
-    
+
     // Update Nepal time every second
     const timer = setInterval(() => {
       setNepalTime(getNepalTime());
     }, 1000);
-    
+
     // Clear interval on component unmount
     return () => clearInterval(timer);
   }, []);
@@ -81,12 +81,12 @@ const Home = () => {
   return (
     <div className="home">
       <h2>Weather in {weather.city}</h2>
-      
+
       {/* Nepal Time Display */}
       <div className="time-display">
         <p>Current Time in Nepal: {nepalTime}</p>
       </div>
-      
+
       <div className="weather-controls">
         <select value={location} onChange={handleLocationChange}>
           {locations.map((loc) => (
@@ -96,7 +96,7 @@ const Home = () => {
           ))}
         </select>
       </div>
-      
+
       <div className="weather-card">
         <div className="weather-main">
           <span className="temperature">{weather.temperature}°C</span>
