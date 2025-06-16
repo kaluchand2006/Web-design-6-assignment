@@ -1,0 +1,71 @@
+.App {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar h1 {
+  color: #007bff;
+}
+
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  color: #333;
+}
+
+.navbar a:hover {
+  color: #007bff;
+}
+
+.home, .about, .contact {
+  margin-top: 20px;
+}
+
+.time-display {
+  margin: 15px 0;
+  padding: 10px;
+  background: #f0f8ff;
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.weather-controls {
+  margin: 20px 0;
+}
+
+select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.weather-card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.temperature {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 20px;
+}
+
+.error {
+  color: red;
+}
